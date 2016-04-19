@@ -1,0 +1,67 @@
+<section class="horizontal-form">
+  <div class="container-fluid">
+    {{!-- This partial contains the quantity, name, and description fields --}}
+    {{partial "host/add-common"}}
+
+    <div class="over-hr r-mt20 r-mb20">
+      <span>RackHD</span>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label class="form-control-static">Endpoint*</label>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span> {{config.transport}}://</button>
+            <ul class="dropdown-menu">
+              <li><a href="#" {{action "setTransport" "https"}}>https://</a></li>
+              <li><a href="#" {{action "setTransport" "http"}}>http://</a></li>
+            </ul>
+          </div>
+          {{input type="text" class="form-control" value=config.endpoint}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label class="form-control-static">Node*</label>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        {{input type="text" class="form-control" value=config.nodeId}}
+        <p class="help-block">This can be ths ID, MAC Address, or IP Address of a Node.</p>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label class="form-control-static">SSH User</label>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        {{input type="text" class="form-control" value=config.sshUser}}
+      </div>
+      <div class="col-sm-12 col-md-2 form-label">
+        <label class="form-control-static">SSH Password</label>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        {{input type="text" class="form-control" value=config.sshPassword}}
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-sm-12 col-md-2 form-label">
+        <label class="form-control-static">SSH Port</label>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        {{input type="number" min=1 max=65535 class="form-control" value=config.sshPort}}
+      </div>
+    </div>
+
+    {{partial "host/add-options"}}
+  </div>
+
+  {{top-errors errors=errors}}
+  {{save-cancel save="save" cancel="cancel"}}
+</section>

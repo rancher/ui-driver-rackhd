@@ -1,0 +1,22 @@
+{
+  "name": "ui-driver-rackhd",
+  "description": "Rancher UI driver for RackHD",
+  "main": "",
+  "authors": [
+    "Rancher Labs, Inc."
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/rancher/ui-driver-rackhd",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "^2.5.0"
+  }
+}
