@@ -1,9 +1,9 @@
-define('ui/components/drivers/driver-%%DRIVERNAME%%/component', ['exports', 'ember', 'ui/mixins/driver'], function (exports, _ember, _uiMixinsDriver) {
+define('ui/components/machine/driver-%%DRIVERNAME%%/component', ['exports', 'ember', 'ui/mixins/driver'], function (exports, _ember, _uiMixinsDriver) {
   var Ember = _ember.default;
   var DriverMixin = _uiMixinsDriver.default;
 
   exports['default'] = Ember.Component.extend(DriverMixin, {
-    driverName: 'driver-%%DRIVERNAME%%',
+    driverName: '%%DRIVERNAME%%',
     config: Ember.computed.alias('model.%%DRIVERNAME%%Config'),
 
     actions: {
